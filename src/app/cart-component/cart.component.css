@@ -1,0 +1,38 @@
+.cart{
+    border: 1px solid black;
+    padding: 12px;
+    overflow:auto;
+    color:#2493d3;
+    min-height:100px;
+}
+.header{
+    overflow:auto;
+    border-bottom: 1px solid black;
+}
+.header *{
+    padding-left:0px;
+    padding-right:0px;
+}
+.orderInfo{
+    padding-bottom:7px;
+    border-bottom:1px solid black;
+}
+
+.orderInfo *{
+    padding-left:0px;
+    padding-right:0px;
+    
+}
+.orderInfo{
+    margin-top:13px;
+}
+.orders .btn{
+    padding: 0px 8px;
+}
+div{
+    overflow:auto
+}
+.final-amount{
+    padding-right:45px;
+    padding-top:10px;
+}

@@ -1,0 +1,18 @@
+<p>
+  Products
+</p>
+
+<div class="products row">
+  <div *ngFor="let product of products;let i = index" class = "col-xs-4" >
+    <div class="product">
+      <div >
+        <img  class = "images"[src]="imagesArray[i]">
+      </div>
+      <div class="content">
+        <div class= "name" [innerHTML]="product.name"></div>
+        <div class="price" [innerHTML]="product.price + ' ' + currency"></div>
+        <button (click)=addToCart(product.name,product.price)>Add To Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

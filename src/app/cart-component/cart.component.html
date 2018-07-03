@@ -1,0 +1,40 @@
+<p>
+  Cart
+</p>
+
+<div class = "cart"  >
+  <div class="header">
+    <div class="col-xs-4">Item</div>
+    <div class="col-xs-3">Price</div>
+    <div class="col-xs-3">Quantity</div>
+    <div class="col-xs-2">Total Price</div>
+  </div>
+  <div class="orders">
+    <ng-container *ngIf="isOrderPresent" >
+      <div *ngFor="let product of cartArray; let i = index">
+        <ng-container>
+          <div class = "orderInfo">
+              <div class="col-xs-4">{{product.name}}</div>
+              <div class="col-xs-3">{{product.price + ' ' + currency}}</div>
+              <div class="col-xs-3">                  
+                  <button type="button" class="btn btn-default btn-number btn"  (click) = reduceQuantity(product.quantity,i)  >
+                      <small><span class="glyphicon glyphicon-minus"></span></small>
+                  </button>                  
+                  <span>{{product.quantity}}</span>                  
+                  <button type="button" class="btn btn-default btn-number btn" (click) = increaseQuantity(product.quantity,i) >
+                      <small><span class="glyphicon glyphicon-plus"></span></small>
+                  </button>
+                  
+                  </div>
+              <div class="col-xs-2" class="total-price">{{product.price * product.quantity + ' ' + currency}}    
+                  <small><span class="glyphicon glyphicon-minus" (click) = removeProduct(product,i)></span></small>
+                </div>
+              
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+  <div class="final-amount pull-right" *ngIf="isOrderPresent" [innerHTML]="totalAmount()">
+  </div>
+</div>
