@@ -49,7 +49,7 @@ export class CartComponent implements OnInit {
   totalAmount(){
     let amount  = this.cartArray.map(sum=> sum.price*sum.quantity);
     let totalAmount = amount.reduce((accum,obj)=>accum + obj);
-    return "Total Amouunt:" + ' ' + totalAmount + ' '  + this.currency;
+    return "Total Amount:" + ' ' + totalAmount + ' '  + this.currency;
   }
 
   reduceQuantity(quantity,index){
